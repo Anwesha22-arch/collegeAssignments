@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment_3</title>
+</head>
+<body>
+    <div class="form_container">
+        <h2>Registration Form</h2>
+        <!--To add a link-->
+    <a href="assignment_2.html" alink="blue" vlink="red" link="yellow">Redirected to assignment_2</a>
+    <form action="#">
+        <!--first name-->
+        <label for="first_name">First Name:</label>
+        <input type="text" id="first_name" name="first_name" placeholder="Enter your first name" required><br><br>
+        <!--Last name-->
+        <label for="last_name">Last Name:</label>
+        <input type="text" id="last_name" name="last_name" placeholder="Enter your last name" required><br><br>
+        <!--Email-->
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="it should contain @" required><br><br>
+        <!--Mobile number should allow only numeric values and max is 10 digits-->
+        <label for="mobile">Mobile:</label>
+        <input type="text" id="mobile" name="mobile" maxlength="10" pattern="\d{10}" required><br><br>
+        <!--Gender should have good radio buttons-->
+        <label for="gender">Gender:</label>
+        <input type="radio" name="gender" id="male" value="Male">
+        <label for="male">Male</label>
+        <input type="radio" name="gender" id="female" value="female">
+        <label for="female">Female</label><br><br>
+        <!--DOB-->
+        <label for="dob">Date  Of  Birth:</label>
+        <input type="date" name="dob" id="dob" max="2024-08-13" min="2012-12-12" placeholder="mm/dd/yyyy" required><br><br>
+        <!--Address-->
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" rows="4" cols="50"></textarea><br><br>
+        <!--Add options to City-->
+        <label for="city">City:</label>
+        <select id="city" name="city" required>
+            <option value="" select city>Select City</option>
+            <option value="kolkata">kolkata</option>  
+            <option value="hydrabad">Hydrabad</option>  
+            <option value="jaipur">Jaipur</option>  
+            <option value="rishikesh">Rishikesh</option>   
+            </select><br><br>
+        <!--Max digits in area pin should be six-->
+        <label for="pin">Area PIN:</label>
+        <input type="number" id="pin" name="pin" maxlength="6" required><br><br>
+        <!--State-->
+        <label for="state">State:</label>
+        <input type="text" id="state" name="state" required><br><br>
+        <!--Add options to Qualification-->
+        <label for="qualification">Qualification:</label>
+        <select id="qualification" name="qualification" required>
+        <option value="" selected disabled>Select Qualification</option>
+        <option value="cs">Computer Science</option>
+        <option value="it">Information Technology</option>
+        <option value="ca">Computer Architecture</option>
+        <option value="tc">Tele communication</option>
+        </select><br><br>
+        <!--Add Specialization-->
+        <label for="specialization">Specialization:</label>
+        <input type="checkbox" name="specialization" id="cs" value="cs">
+        <label for="cs">Computer Science</label>
+        <input type="checkbox" name="specialization" id="it" value="it">
+        <label for="it">Information Technology</label>
+        <input type="checkbox" name="specialization" id="ca" value="ca">
+        <label for="ca">Computer Architecture</label>
+        <input type="checkbox" name="specialization" id="tc" value="tc">
+        <label for="tc">Tele Communication</label><br><br>
+        <!--Password should not exceed 8 characters-->
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" maxlength="8" required><br><br>
+        <!--Submit button-->
+        <button type="submit" class="btn-submit" style="background-color: green; color: white;">Submit</button>
+
+    </form>
+</div>
+</body>
+</html>
