@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Event Demonstration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .section h2 {
+            margin-bottom: 10px;
+        }
+        .box {
+            width: 150px;
+            height: 150px;
+            background-color: lightblue;
+            border: 1px solid #000;
+            margin-bottom: 10px;
+            text-align: center;
+            line-height: 150px;
+        }
+        #dragBox {
+            background-color: lightcoral;
+            line-height: 150px;
+            text-align: center;
+        }
+        #dropArea {
+            width: 150px;
+            height: 150px;
+            background-color: lightgreen;
+            line-height: 150px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Mouse Events -->
+    <div class="section">
+        <h2>Mouse Events</h2>
+        <div id="mouseBox" class="box" onclick="handleClick()" ondblclick="handleDoubleClick()" onmouseover="handleMouseOver()" onmouseout="handleMouseOut()" onmousedown="handleMouseDown()" onmouseup="handleMouseUp()" onmousemove="handleMouseMove()">
+            Click me!
+        </div>
+        <p id="mouseEventResult">Interact with the box above to see mouse events in action.</p>
+    </div>
+
+    <!-- Keyboard Events -->
+    <div class="section">
+        <h2>Keyboard Events</h2>
+        <input type="text" id="keyboardInput" onkeydown="handleKeyDown()" onkeyup="handleKeyUp()" onkeypress="handleKeyPress()" placeholder="Type something here...">
+        <p id="keyboardEventResult">Type in the input box to see keyboard events in action.</p>
+    </div>
+
+    <!-- Form Events -->
+    <div class="section">
+        <h2>Form Events</h2>
+        <form id="demoForm" onsubmit="handleSubmit(event)" onchange="handleChange()" oninput="handleInput()" onfocus="handleFocus()" onblur="handleBlur()">
+            <label for="name-input">Name:</label>
+            <input type="text" id="name-input"><br><br>
+            <label for="email-input">Email:</label>
+            <input type="email" id="email-input"><br><br>
+            <button type="submit">Submit</button>
+        </form>
+        <p id="formEventResult">Interact with the form elements to see form events in action.</p>
+    </div>
+
+    <!-- Window Events -->
+    <div class="section">
+        <h2>Window Events</h2>
+        <p id="windowEventResult">Resize the window or scroll the page to see window events in action.</p>
+    </div>
+
+    <!-- Clipboard Events -->
+    <div class="section">
+        <h2>Clipboard Events</h2>
+        <textarea id="clipboardInput" oncopy="handleCopy()" onpaste="handlePaste()" oncut="handleCut()">Try copying, pasting, or cutting this text.</textarea>
+        <p id="clipboardEventResult">Copy, paste, or cut text in the box above to see clipboard events in action.</p>
+    </div>
+
+    <!-- Drag Events -->
+    <div class="section">
+        <h2>Drag Events</h2>
+        <div id="dragBox" class="box" draggable="true" ondragstart="handleDragStart()" ondragend="handleDragEnd()">
+            Drag me!
+        </div>
+        <div id="dropArea" ondragover="handleDragOver(event)" ondrop="handleDrop(event)">
+            Drop here!
+        </div>
+        <p id="dragEventResult">Drag the red box into the green area to see drag events in action.</p>
+    </div>
+
+    <!-- Media Events -->
+    <div class="section">
+        <h2>Media Events</h2>
+        <video id="videoPlayer" width="320" height="240" controls onplay="handlePlay()" onpause="handlePause()" onvolumechange="handleVolumeChange()" onended="handleEnded()">
+            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <p id="mediaEventResult">Interact with the video player to see media events in action.</p>
+    </div>
+
+    <script>
+        // Mouse Event Handlers
+        function handleClick() { document.getElementById('mouseEventResult').textContent = "Clicked!"; }
+        function handleDoubleClick() { document.getElementById('mouseEventResult').textContent = "Double Clicked!"; }
+        function handleMouseOver() { document.getElementById('mouseEventResult').textContent = "Mouse Over!"; }
+        function handleMouseOut() { document.getElementById('mouseEventResult').textContent = "Mouse Out!"; }
+        function handleMouseDown() { document.getElementById('mouseEventResult').textContent = "Mouse Down!"; }
+        function handleMouseUp() { document.getElementById('mouseEventResult').textContent = "Mouse Up!"; }
+        function handleMouseMove() { document.getElementById('mouseEventResult').textContent = "Mouse Moving!"; }
+
+        // Keyboard Event Handlers
+        function handleKeyDown() { document.getElementById('keyboardEventResult').textContent = "Key Down!"; }
+        function handleKeyUp() { document.getElementById('keyboardEventResult').textContent = "Key Up!"; }
+        function handleKeyPress() { document.getElementById('keyboardEventResult').textContent = "Key Pressed!"; }
+
+        // Form Event Handlers
+        function handleSubmit(event) { event.preventDefault(); document.getElementById('formEventResult').textContent = "Form Submitted!"; }
+        function handleChange() { document.getElementById('formEventResult').textContent = "Form Changed!"; }
+        function handleInput() { document.getElementById('formEventResult').textContent = "Input Event!"; }
+        function handleFocus() { document.getElementById('formEventResult').textContent = "Input Focused!"; }
+        function handleBlur() { document.getElementById('formEventResult').textContent = "Input Blurred!"; }
+
+        // Window Event Handlers
+        window.onload = function() { document.getElementById('windowEventResult').textContent = "Window Loaded!"; }
+        window.onresize = function() { document.getElementById('windowEventResult').textContent = "Window Resized!"; }
+        window.onscroll = function() { document.getElementById('windowEventResult').textContent = "Window Scrolling!"; }
+
+        // Clipboard Event Handlers
+        function handleCopy() { document.getElementById('clipboardEventResult').textContent = "Text Copied!"; }
+        function handlePaste() { document.getElementById('clipboardEventResult').textContent = "Text Pasted!"; }
+        function handleCut() { document.getElementById('clipboardEventResult').textContent = "Text Cut!"; }
+
+        // Drag Event Handlers
+        function handleDragStart() { document.getElementById('dragEventResult').textContent = "Dragging Started!"; }
+        function handleDragEnd() { document.getElementById('dragEventResult').textContent = "Dragging Ended!"; }
+        function handleDragOver(event) { event.preventDefault(); document.getElementById('dragEventResult').textContent = "Dragging Over!"; }
+        function handleDrop(event) { event.preventDefault(); document.getElementById('dragEventResult').textContent = "Dropped!"; }
+
+        // Media Event Handlers
+        function handlePlay() { document.getElementById('mediaEventResult').textContent = "Video Playing!"; }
+        function handlePause() { document.getElementById('mediaEventResult').textContent = "Video Paused!"; }
+        function handleVolumeChange() { document.getElementById('mediaEventResult').textContent = "Volume Changed!"; }
+        function handleEnded() { document.getElementById('mediaEventResult').textContent = "Video Ended!"; }
+    </script>
+
+</body>
+</html>
