@@ -1,0 +1,35 @@
+/* public/css/styles.css */
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  .navbar-brand{
+    color: rgb(82, 3, 157);;
+  }
+  .carousel {
+    margin-bottom: 20px;
+  }
+  
+  .container h2 {
+    margin-bottom: 20px;
+  }
+
+  .desp{
+    color: rgb(82, 3, 157);
+    font-size: 17px;
+  }
+  
+  .brand{
+    font-size: 25px;
+  }
+
+  html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer {
+    margin-top: auto; /* Push the footer to the bottom */
+}
